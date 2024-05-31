@@ -8,7 +8,7 @@ app.use(express.json())
 app.use(cors())
 
 const port = process.env.PORT || 3001
-const mongoURI = "mongodb+srv://Oden:7wchIAUDBOZ7b@cluster0.chq90ih.mongodb.net/record-entry?retryWrites=true&w=majority&appName=Cluster0";
+const mongoURI = process.env.DATABASE_KEY;
 
 mongoose.connect(mongoURI).then(() => {
     console.log("MongoDB Connected")
